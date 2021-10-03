@@ -105,7 +105,7 @@ function maximumOfFour(num1, num2, num3, num4){
 function ticketMachine(age) {
     let pris = 0;
     
-    if (age < 18) {
+    if (age < 18) {     
         pris = 10;
     } else if (age >= 18 && age < 65) {
         pris = 20;
@@ -126,11 +126,18 @@ function sumTo(num) {
     return sum;
 }
 
+function factorial(num) {
+    let sum = 1;
 
+    for (let i = 1; i <= num; i++) {
+        sum *= i;
+    }
+    return sum;
+}
 
 
 function main() {
-    let result = sumTo(5);
+    let result = factorial(5);
 
 }
 main()
