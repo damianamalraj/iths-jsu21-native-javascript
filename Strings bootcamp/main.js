@@ -107,12 +107,23 @@ function replaceChar(text, char1, char2) {
     }
 }
 
-
+function substring(text, start, stop) {
+    let result = "",
+        i = 0;
+    
+        while (i <= stop) {
+            if (i >= start && i <= stop) {
+                result += text[i];
+            }
+            i++
+        }
+        return result;
+}
 
 
 
 function main() {
-    let result = replaceChar("hello", "l", "x");
+    let result = substring("hello world", 4, 8);
 
 }
 main()
