@@ -1,6 +1,6 @@
 function containsElement(arr, elm) {
-    let i = 0,
-        result = undefined;
+    let i = 0;
+    let result = false;
 
     while (i < arr.length) {
         if (arr[i] == elm) {
@@ -11,9 +11,64 @@ function containsElement(arr, elm) {
     return result;
 }
 
+function indexOfElement(arr, elm) {
+    let result = -1,
+        i = 0;
+
+    while (i < arr.length) {
+        if (arr[i] == elm) {
+            result = i + 1;
+        }
+        i++
+    }
+
+    return result;
+}
+
+function min(arr) {
+    let min = arr[0],
+        i = 0;
+
+    while (i < arr.length) {
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+        i++
+    }
+    return min;
+}
+
+function max(arr) {
+    let max = arr[0],
+        i = 0;
+
+    while (i < arr.length) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+        i++
+    }
+
+    return max;
+}
+
+function sum(arr) {
+    let sum = 0,
+        i = 0;
+    
+    while (i < arr.length) {
+        sum += arr[i];
+        i++
+    }
+    return sum;
+}
+
+
+
 const main = ()=>{
     let array = ["cat", "dog", "elephant", "lion", "tiger"];
+    let arrayNumbers = [34, 5, 65, 7, 2, 45];
 
-    let result = containsElement(array, "lion");
+    let result = sum(arrayNumbers);
 }
 main()
