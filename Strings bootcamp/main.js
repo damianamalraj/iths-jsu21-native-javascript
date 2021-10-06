@@ -12,11 +12,12 @@ function repeat(text, num) {
 
 function containsChar(text, char) {
     let i = 0;
+    let result = false;
 
 
     while(i < text.length){
         if(text[i] == char){
-            return true;
+            result = true;
         }
         i += 1;
 
@@ -120,10 +121,55 @@ function substring(text, start, stop) {
         return result;
 }
 
+function contains(str, otherString) {
+    let result = false;
+
+    for (let i = 0; i < str.length; i++) {
+        let sub = substring(str, i, i + otherString.length - 1);
+
+        if (sub == otherString) {
+            result = true;
+        }
+    }
+
+    return result;
+}
+
+function remove(str, otherString){
+    let output = "";
+    
+    for(let i = 0; i < str.length; i++){
+    
+    const sub = substring(str, i, i + otherString.length - 1);
+    
+    if(sub != otherString){
+        output += str[i];
+    } else{
+        i += otherString.length - 1; //to stop the loop once the variables match. so if i is no longer lesser then str.length. so once matches there is no need to loop any more, it will overwrite the result too...
+    }
+    }
+    return output;
+}
+
+function replace(str, replacee, replacer){
+    let output = "";
+    for(let i = 0; i < str.length; i++){
+        const sub = substring(str, i, i + replacee.length - 1);
+        if(sub != replacee){
+        output += str[i];
+        }else{
+            output += replacer;
+            i += replacee.length - 1;
+        }
+    }
+    return output;
+}
+
+
 
 
 function main() {
-    let result = substring("hello world", 4, 8);
+    let result = replace("hello world");
 
 }
 main()

@@ -63,12 +63,23 @@ function sum(arr) {
     return sum;
 }
 
+function mean(arr) {
+    let result = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        result += arr[i];
+    }
+    return result / arr.length;
+}
+
+
+
 
 
 const main = ()=>{
     let array = ["cat", "dog", "elephant", "lion", "tiger"];
     let arrayNumbers = [34, 5, 65, 7, 2, 45];
 
-    let result = sum(arrayNumbers);
+    let result = mean(arrayNumbers);
 }
 main()
