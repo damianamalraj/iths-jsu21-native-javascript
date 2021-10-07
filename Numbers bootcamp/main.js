@@ -135,6 +135,17 @@ function factorial(num) {
     return sum;
 }
 
+function fibonacci(num){
+    let current = 1, 
+        previous = 1;
+
+    for(let i = 2; i < num; i += 1){ 
+        current = current + previous;
+        previous = current - previous;
+    }
+    return current;
+}
+
 
 function main() {
     let result = factorial(5);

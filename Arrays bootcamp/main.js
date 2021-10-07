@@ -156,12 +156,17 @@ function join(arr, delimiter) {
     return result;
 }
 
+function randomElement(arr) {
+    let random = Math.round(Math.random() * (arr.length - 1));
+
+    return arr[random];
+}
 
 const main = ()=>{
-    let array = ["cat", "dog", "elephant", "lion", "tiger"];
+    let array = ["cat", "dog", "elephant", "lion", "tiger", "bear", "bird", "dragon", "monkey", "chicken"];
     let arrayNumbers = [34, 5, 65, 7, 2, 45, 45, 5, 5, 1];
     let random = "hkajhs kjhd kjashk ajhdk";
 
-    let result = join(array, "...");
+    let result = randomElement(array);
 }
 main()
