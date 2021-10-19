@@ -6,7 +6,7 @@ function containsElement(arr, elm) {
         if (arr[i] == elm) {
             result = true;
         }
-        i++
+        i++;
     }
     return result;
 }
@@ -19,7 +19,7 @@ function indexOfElement(arr, elm) {
         if (arr[i] == elm) {
             result = i + 1;
         }
-        i++
+        i++;
     }
 
     return result;
@@ -33,7 +33,7 @@ function min(arr) {
         if (arr[i] < min) {
             min = arr[i];
         }
-        i++
+        i++;
     }
     return min;
 }
@@ -46,7 +46,7 @@ function max(arr) {
         if (arr[i] > max) {
             max = arr[i];
         }
-        i++
+        i++;
     }
 
     return max;
@@ -55,10 +55,10 @@ function max(arr) {
 function sum(arr) {
     let sum = 0,
         i = 0;
-    
+
     while (i < arr.length) {
         sum += arr[i];
-        i++
+        i++;
     }
     return sum;
 }
@@ -89,7 +89,7 @@ function filter(arr, elm) {
         if (arr[i] == elm) {
             result.push(arr[i]);
         }
-        i++
+        i++;
     }
 
     return result;
@@ -103,7 +103,7 @@ function exclude(arr, elm) {
         if (arr[i] !== elm) {
             result.push(arr[i]);
         }
-        i++
+        i++;
     }
     return result;
 }
@@ -124,7 +124,8 @@ function reverseStrings(arr) {
 
     for (let i = 0; i < arr.length; i++) {
         let string = "";
-        for (let j = arr[i].length - 1; j >= 0; j--) { //don’t forget -1 
+        for (let j = arr[i].length - 1; j >= 0; j--) {
+            //don’t forget -1
             string += arr[i][j];
         }
         result.push(string);
@@ -135,7 +136,7 @@ function reverseStrings(arr) {
 function split(arr, delimiter) {
     let result = [],
         current = "";
-    
+
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] !== delimiter) {
             current += arr[i];
@@ -162,11 +163,22 @@ function randomElement(arr) {
     return arr[random];
 }
 
-const main = ()=>{
-    let array = ["cat", "dog", "elephant", "lion", "tiger", "bear", "bird", "dragon", "monkey", "chicken"];
+const main = () => {
+    let array = [
+        "cat",
+        "dog",
+        "elephant",
+        "lion",
+        "tiger",
+        "bear",
+        "bird",
+        "dragon",
+        "monkey",
+        "chicken",
+    ];
     let arrayNumbers = [34, 5, 65, 7, 2, 45, 45, 5, 5, 1];
     let random = "hkajhs kjhd kjashk ajhdk";
 
     let result = randomElement(array);
-}
-main()
+};
+main();

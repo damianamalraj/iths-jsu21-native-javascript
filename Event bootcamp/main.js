@@ -29,7 +29,7 @@ input.addEventListener("input", (event) => {
 
 const h1 = document.createElement("h1");
 body.append(h1);
-let sekunder = 60;
+let sekunder = 10;
 
 setInterval(() => {
     if (sekunder > 0) {
@@ -191,23 +191,47 @@ let colors = [
     "yellowgreen",
 ];
 
-const input1 = document.createElement("input");
-body.append(input1);
-
-input1.addEventListener("keypress", (event) => {
-    if (colors.includes(event.target.value) && event.code == "Enter") {
-        body.style.backgroundColor = event.target.value;
-    } else if (!colors.includes(event.target.value) && event.code == "Enter") {
-        const p1 = (document.createElement("p").innerText = "error!");
-        body.append(p1);
-    }
-});
-
 const div = document.createElement("div");
 body.append(div);
 
-for (let i = 0; i < colors.length; i++) {
-    const list = document.createElement("li");
-    div.append(list);
-    list.innerText = colors[i];
-}
+const input1 = document.createElement("input");
+div.append(input1);
+
+input1.addEventListener("keyup", (event) => {
+    if (colors.includes(event.target.value) && event.code == "Enter") {
+        body.style.backgroundColor = event.target.value;
+    } else if (!colors.includes(event.target.value) && event.code == "Enter") {
+        const p1 = (document.createElement("p").innerText = "error! ");
+        div.append(p1);
+    }
+});
+
+const list = document.createElement("span");
+body.append(list);
+
+input1.addEventListener("keyup", (event) => {
+    const items = colors.filter((col) => col.includes(input1.value));
+
+    list.innerHTML = "";
+    items.forEach((it) => {
+        const item = document.createElement("li");
+        item.innerText = it;
+        list.append(item);
+    });
+
+    if (input1.value == "") {
+        list.innerHTML = "";
+    } else {
+    }
+
+    console.log(items);
+    console.log(input1.value);
+
+    const lis = document.querySelectorAll("li");
+    lis.forEach((a) => {
+        a.addEventListener("click", (event) => {
+            input1.value = event.target.innerText;
+            body.style.backgroundColor = event.target.innerText;
+        });
+    });
+});
